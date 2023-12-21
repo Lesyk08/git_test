@@ -10,13 +10,24 @@ router.get('/products', (request, response) => {
 });
 
 // handle get request for path /products/:brand
-router.get('/products/:brand', blockSpecialBrand, (request, response) => {
+/*router.get('/products/:brand', blockSpecialBrand, (request, response) => {
    const { brand } = request.params; // Access the brand parameter from the URL
 
    // Filter products based on the brand parameter
    const filteredProducts = products.filter(product => product.brand === brand);
 
    response.json(filteredProducts); // Send the filtered products as a JSON response
+});*/
+router.get('/products/:id', (request, response) => {
+    const { id } = request.params;// Access the id parameter from the URL
+
+    //convert our id value form string to int
+    const parsedValueId = parseInt(id, 10);
+
+    // Filter products based on the brand and id parameters
+    const filteredProducts = products.filter(product => product.id === parsedValueId);
+
+    response.json(filteredProducts);// Send the filtered products as a JSON response
 });
 
 router.get('/productswitherror', (request, response) => {
