@@ -1,14 +1,22 @@
 {
-  "name": "git-local-lab",
+  "name": "nodejs-course",
   "version": "1.0.0",
-  "description": "Nodejs_course",
-  "main": "index.js",
+  "description": "",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node src/index.js",
+    "migration:generate": "drizzle-kit generate:pg",
+    "migration:push": "drizzle-kit push:pg"
   },
-  "author": "Olesia Hnatiuk",
+  "author": "maksym bychok",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "drizzle-orm": "^0.30.6",
+    "express": "^4.18.2",
+    "pg": "^8.11.4"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.20.14"
   }
 }
